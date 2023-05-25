@@ -13,9 +13,9 @@ import { generateOTP } from "../services/otp.service";
 
 export const register = async (req: Request, res: Response) => {
   try {
-    const { name, phone_number, password } = req.body;
+    const { name, phone_number, password, role } = req.body;
 
-    if (!name || !phone_number || !password) {
+    if (!name || !phone_number || !password || !role) {
       return res.status(400).json({ message: "Please provide all fields" });
     }
 
@@ -40,8 +40,9 @@ export const register = async (req: Request, res: Response) => {
     const newUser: IUser = new User({
       name,
       phone_number,
+      otp,
+      role,
       password: hashedPassword,
-      otp, // Store the generated OTP in the user object
     });
     await newUser.save();
 
@@ -69,7 +70,7 @@ export const verifyOTP = async (req: Request, res: Response) => {
   try {
     const { phone_number, otp } = req.body;
 
-    if (!phone_number ||!otp) {
+    if (!phone_number || !otp) {
       return res.status(400).json({ message: "Please provide all fields" });
     }
 
@@ -114,6 +115,14 @@ export const login = async (req: Request, res: Response) => {
     const user = await User.findOne({ phone_number });
     if (!user) {
       return res.status(401).json({ message: "Invalid phone number" });
+    }
+
+    // Check if the user's mobile number is verified
+    if (!user.isVerfied) {
+      return res.status(400).json({
+        message:
+          "Please verify your mobile number before logging in. We have sent a verification code to your phone. Check your messages and enter the code to complete the verification process.",
+      });
     }
 
     // Check if the provided password matches the stored hashed password
