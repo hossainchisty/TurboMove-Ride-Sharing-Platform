@@ -69,6 +69,10 @@ export const verifyOTP = async (req: Request, res: Response) => {
   try {
     const { phone_number, otp } = req.body;
 
+    if (!phone_number ||!otp) {
+      return res.status(400).json({ message: "Please provide all fields" });
+    }
+
     // Find the user with the provided phone number
     const user = await User.findOne({ phone_number });
 
