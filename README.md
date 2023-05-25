@@ -1,3 +1,5 @@
+### T u r b o M o v e 🚚 is a ride-sharing and logistics platform.
+
 User Authentication: Implement user registration and login functionality to secure user accounts and protect sensitive information.
 
 Ride Booking: Allow users to book rides by specifying the pickup and drop-off locations, preferred time, and number of passengers. Provide real-time updates on ride availability, estimated fares, and driver details.
