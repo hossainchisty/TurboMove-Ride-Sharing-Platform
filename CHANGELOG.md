@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/hossainchisty/TurboMove/compare/v1.3.0...v1.4.0) (2023-05-25)
+
+
+### Features
+
+* Add role to user registration and check for verified mobile number before login' ([be9d8ac](https://github.com/hossainchisty/TurboMove/commit/be9d8ac12bac5062460d886454fb1270c018bd15))
+
+
+
 # [1.3.0](https://github.com/hossainchisty/TurboMove/compare/v1.2.1...v1.3.0) (2023-05-25)
 
 
