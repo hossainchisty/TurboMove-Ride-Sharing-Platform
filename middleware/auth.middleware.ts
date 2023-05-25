@@ -1,12 +1,11 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import User from "../models/userModel";
+import User, { IUser } from "../models/userModel";
 
-interface AuthenticatedRequest extends Request {
-  user?: any;
-}
+// Define the AuthenticatedRequest type
+export type AuthenticatedRequest = Request & { user?: IUser };
 
-const protect = (
+const protect = async (
   req: AuthenticatedRequest,
   res: Response,
   next: NextFunction
@@ -18,15 +17,19 @@ const protect = (
   }
 
   try {
-    // Verify and decode the token
+    // Verify the token
     const decoded = jwt.verify(token, "your-secret-key") as { userId: string };
-    req.user = decoded;
-    // Retrieve user information from the database based on the decoded user ID
-    const userId = decoded.userId;
-    const user = User.findById(userId);
 
-    // Add the user object to the request for further processing
+    // Get the user from the database based on the userId
+    const user = await User.findById(decoded.userId);
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Attach the user to the request object
     req.user = user;
+
     // Call the next middleware or route handler
     next();
   } catch (error) {
