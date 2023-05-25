@@ -125,6 +125,11 @@ export const login = async (req: Request, res: Response) => {
       });
     }
 
+    // Check user role
+    if (user.role !== "rider" && user.role !== "shipper") {
+      return res.status(403).json({ message: "Unauthorized user role" });
+    }
+
     // Check if the provided password matches the stored hashed password
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
