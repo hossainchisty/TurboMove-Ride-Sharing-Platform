@@ -1,3 +1,14 @@
+# [1.7.0](https://github.com/hossainchisty/TurboMove/compare/v1.6.0...v1.7.0) (2023-05-25)
+
+
+### Features
+
+* add createTrack function with validation and error handling ([40ef538](https://github.com/hossainchisty/TurboMove/commit/40ef53848cf49b1da4dcd6a4526031d36abffeb9))
+* Add Rider Router to Handle Authentication and Create Track ([651eade](https://github.com/hossainchisty/TurboMove/commit/651eadef0ea0a853f65f083264871609f91620ef))
+* Add status field to IRide interface and rideSchema. ([92a53f7](https://github.com/hossainchisty/TurboMove/commit/92a53f7a51f0c8daf3ac78a54c4e7aab8267fd03))
+
+
+
 # [1.6.0](https://github.com/hossainchisty/TurboMove/compare/v1.5.0...v1.6.0) (2023-05-25)
 
 
@@ -31,15 +42,6 @@
 ### Features
 
 * Add role to user registration and check for verified mobile number before login' ([be9d8ac](https://github.com/hossainchisty/TurboMove/commit/be9d8ac12bac5062460d886454fb1270c018bd15))
-
-
-
-# [1.3.0](https://github.com/hossainchisty/TurboMove/compare/v1.2.1...v1.3.0) (2023-05-25)
-
-
-### Features
-
-* Add role and license number fields to IUser model ([3ab1126](https://github.com/hossainchisty/TurboMove/commit/3ab11264807607c135544ee1fd74a4feea65f9e5))
 
 
 
