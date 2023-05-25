@@ -1,3 +1,12 @@
+# [1.6.0](https://github.com/hossainchisty/TurboMove/compare/v1.5.0...v1.6.0) (2023-05-25)
+
+
+### Features
+
+* Add Rider API implementation ([5d99cb2](https://github.com/hossainchisty/TurboMove/commit/5d99cb2f8f5c67df676245970f3780f6fed7c11c))
+
+
+
 # [1.5.0](https://github.com/hossainchisty/TurboMove/compare/v1.4.1...v1.5.0) (2023-05-25)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * Add role and license number fields to IUser model ([3ab1126](https://github.com/hossainchisty/TurboMove/commit/3ab11264807607c135544ee1fd74a4feea65f9e5))
-
-
-
-## [1.2.1](https://github.com/hossainchisty/TurboMove/compare/v1.2.0...v1.2.1) (2023-05-25)
-
-
-### Bug Fixes
-
-* Add input validation for phone number and OTP in auth controller ([1dab127](https://github.com/hossainchisty/TurboMove/commit/1dab1275fff9ac318875ecfe62b081f6a4d9c2c7))
 
 
 
