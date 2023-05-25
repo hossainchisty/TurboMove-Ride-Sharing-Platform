@@ -5,7 +5,9 @@ export interface IUser extends Document {
   phone_number: number;
   password: string;
   isVerfied: boolean;
-  otp: number;
+  role: "track_owner" | "shipper";
+  license_number:  string;
+  otp: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -16,6 +18,8 @@ const userSchema: Schema = new Schema(
     phone_number: { type: Number, required: true },
     password: { type: String, required: true },
     isVerfied: { type: Boolean, required: false },
+    role: { type: String, enum: ['track_owner', 'shipper'], required: false },
+    license_number : { type: String, required: false},
     otp: { type: String, required: false },
   },
   { versionKey: false, timestamps: true }
