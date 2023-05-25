@@ -1,3 +1,12 @@
+## [1.2.1](https://github.com/hossainchisty/TurboMove/compare/v1.2.0...v1.2.1) (2023-05-25)
+
+
+### Bug Fixes
+
+* Add input validation for phone number and OTP in auth controller ([1dab127](https://github.com/hossainchisty/TurboMove/commit/1dab1275fff9ac318875ecfe62b081f6a4d9c2c7))
+
+
+
 # [1.2.0](https://github.com/hossainchisty/TurboMove/compare/v1.1.0...v1.2.0) (2023-05-25)
 
 
