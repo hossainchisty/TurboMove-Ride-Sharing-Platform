@@ -9,7 +9,6 @@ export interface ITrack extends Document {
   license_number: string;
   document: string;
   track_image: string;
-  price: number;
   isAvailable: boolean;
   owner: Types.ObjectId | IUser;
 }
@@ -23,13 +22,12 @@ const trackSchema: Schema = new Schema(
     license_number: { type: String, required: true },
     document: { type: String, required: true },
     track_image: { type: String, required: true },
-    price: { type: Number, required: true },
     isAvailable: { type: Boolean, default: true },
-    owner: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    owner: { type: Schema.Types.ObjectId, ref: "User", required: false },
   },
-  { timestamps: true }
+  { timestamps: true, versionKey: false },
 );
 
-const TrackModel = mongoose.model<ITrack>("Track", trackSchema);
+const Track = mongoose.model<ITrack>("Track", trackSchema);
 
-export default TrackModel;
+export default Track;
