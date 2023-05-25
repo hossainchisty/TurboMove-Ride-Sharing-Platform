@@ -1,3 +1,12 @@
+# [1.5.0](https://github.com/hossainchisty/TurboMove/compare/v1.4.1...v1.5.0) (2023-05-25)
+
+
+### Features
+
+* Add Track model schema ([27e0f88](https://github.com/hossainchisty/TurboMove/commit/27e0f8804d1088174ec60ac636de2122ad973d6f))
+
+
+
 ## [1.4.1](https://github.com/hossainchisty/TurboMove/compare/v1.4.0...v1.4.1) (2023-05-25)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * Add input validation for phone number and OTP in auth controller ([1dab127](https://github.com/hossainchisty/TurboMove/commit/1dab1275fff9ac318875ecfe62b081f6a4d9c2c7))
-
-
-
-# [1.2.0](https://github.com/hossainchisty/TurboMove/compare/v1.1.0...v1.2.0) (2023-05-25)
-
-
-### Features
-
-*  initial release ([f752f7c](https://github.com/hossainchisty/TurboMove/commit/f752f7cd41e9372b7276f40a67f3207e8d311704))
 
 
 
