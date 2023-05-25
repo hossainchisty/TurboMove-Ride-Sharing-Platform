@@ -1,3 +1,12 @@
+# [1.3.0](https://github.com/hossainchisty/TurboMove/compare/v1.2.1...v1.3.0) (2023-05-25)
+
+
+### Features
+
+* Add role and license number fields to IUser model ([3ab1126](https://github.com/hossainchisty/TurboMove/commit/3ab11264807607c135544ee1fd74a4feea65f9e5))
+
+
+
 ## [1.2.1](https://github.com/hossainchisty/TurboMove/compare/v1.2.0...v1.2.1) (2023-05-25)
 
 
