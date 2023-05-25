@@ -1,4 +1,13 @@
-# 1.1.0 (2023-05-25)
+# [1.2.0](https://github.com/hossainchisty/TurboMove/compare/v1.1.0...v1.2.0) (2023-05-25)
+
+
+### Features
+
+*  initial release ([f752f7c](https://github.com/hossainchisty/TurboMove/commit/f752f7cd41e9372b7276f40a67f3207e8d311704))
+
+
+
+# [1.1.0](https://github.com/hossainchisty/TurboMove/compare/1185edab99ac2bd0b578af1a68af80ebed4d7073...v1.1.0) (2023-05-25)
 
 
 ### Features
