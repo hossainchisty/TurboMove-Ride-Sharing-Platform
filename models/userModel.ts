@@ -1,13 +1,13 @@
 import mongoose, { Schema, Document } from "mongoose";
+import { ITrack } from "./trackModel";
 
 export interface IUser extends Document {
   name: string;
   phone_number: number;
   password: string;
   isVerfied: boolean;
-  role: "rider" | "shipper";
-  license_number:  string;
   otp: string;
+  track: ITrack | null;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -18,9 +18,8 @@ const userSchema: Schema = new Schema(
     phone_number: { type: Number, required: true },
     password: { type: String, required: true },
     isVerfied: { type: Boolean, required: false },
-    role: { type: String, enum: ['rider', 'shipper'], required: false },
-    license_number : { type: String, required: false},
     otp: { type: String, required: false },
+    track: { type: Schema.Types.ObjectId, ref: "Track", default: null },
   },
   { versionKey: false, timestamps: true }
 );

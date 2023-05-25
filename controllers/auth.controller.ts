@@ -13,9 +13,9 @@ import { generateOTP } from "../services/otp.service";
 
 export const register = async (req: Request, res: Response) => {
   try {
-    const { name, phone_number, password, role } = req.body;
+    const { name, phone_number, password } = req.body;
 
-    if (!name || !phone_number || !password || !role) {
+    if (!name || !phone_number || !password) {
       return res.status(400).json({ message: "Please provide all fields" });
     }
 
@@ -39,9 +39,8 @@ export const register = async (req: Request, res: Response) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser: IUser = new User({
       name,
-      phone_number,
       otp,
-      role,
+      phone_number,
       password: hashedPassword,
     });
     await newUser.save();
@@ -125,10 +124,6 @@ export const login = async (req: Request, res: Response) => {
       });
     }
 
-    // Check user role
-    if (user.role !== "rider" && user.role !== "shipper") {
-      return res.status(403).json({ message: "Unauthorized user role" });
-    }
 
     // Check if the provided password matches the stored hashed password
     const isPasswordValid = await bcrypt.compare(password, user.password);
