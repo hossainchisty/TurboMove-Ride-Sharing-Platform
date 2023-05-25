@@ -8,6 +8,7 @@ export interface IRide extends Document {
   endLocation: string;
   startTime: Date;
   endTime: Date;
+  status: "pending" | "accepted" | "completed";
   createdAt: Date;
   updatedAt: Date;
 }
@@ -20,6 +21,11 @@ const rideSchema: Schema = new Schema(
     endLocation: { type: String, required: true },
     startTime: { type: Date, required: true },
     endTime: { type: Date, required: true },
+    status: {
+      type: String,
+      enum: ["pending", "accepted", "completed"],
+      default: "pending",
+    },
   },
   { versionKey: false, timestamps: true }
 );
