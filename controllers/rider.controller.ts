@@ -16,7 +16,16 @@ export const createTrack = async (req: AuthenticatedRequest, res: Response) => {
     } = req.body;
 
     if (!truck_number) {
-      return res.status(400).json({ error: "Truck number is required" });
+      return res.status(400).json({
+        status: 400,
+        message: "Validation error",
+        errors: [
+          {
+            field: "truck_number",
+            message: "Truck number is required",
+          },
+        ],
+      });
     }
 
     if (!serial) {
@@ -39,13 +48,13 @@ export const createTrack = async (req: AuthenticatedRequest, res: Response) => {
       return res.status(400).json({ error: "Track image is required" });
     }
 
-     // Get the logged-in user
-     const userId = req.user!.id; // Add "!" to assert that req.user is not undefined
-     const user = await User.findById(userId);
- 
-     if (!user) {
-       return res.status(404).json({ message: "User not found" });
-     }
+    // Get the logged-in user
+    const userId = req.user!.id; // Add "!" to assert that req.user is not undefined
+    const user = await User.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });
